@@ -3,11 +3,11 @@
   "name": "package-a",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrently --names [RUSH_WATCH],[DUMI_WATCH] -c red,blue \"rush build:watch --to-except package-a\" \"dumi dev\"",
+    "start": "dumi dev",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
     "build": "father-build",
-    "build:watch": "father-build",
+    "build:watch": "npm run start",
     "deploy": "npm run docs:build && npm run docs:deploy",
     "release": "npm run build && npm publish",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
